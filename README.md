@@ -1,3 +1,10 @@
+# Hi!! Perkenalkan
+- NAMA : Zainal Fattah
+- NIM : 32602300013
+- Prodi : Teknik Informatika
+- Fakultas Teknologi Industri
+Repository ini dibuat guna untuk memenuhi tugas pretest Matakuliah Praktikum Web Programming A
+
 # CodeIgniter 4 Project Documentation
 
 ## Overview
@@ -17,7 +24,7 @@ This is a CodeIgniter 4 based web application. CodeIgniter is a powerful PHP fra
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/ZainalFattah/32602300013_Zainal-Fattah_PRETEST.git
 cd [project-directory]
 ```
 
