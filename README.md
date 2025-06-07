@@ -1,68 +1,91 @@
-# CodeIgniter 4 Application Starter
+# CodeIgniter 4 Project Documentation
 
-## What is CodeIgniter?
+## Overview
+This is a CodeIgniter 4 based web application. CodeIgniter is a powerful PHP framework with a very small footprint, built for developers who need a simple and elegant toolkit to create full-featured web applications.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Requirements
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- PHP >= 8.1
+- Required PHP Extensions:
+  - intl
+  - mbstring
+  - json
+  - mysqlnd (for MySQL database)
+  - libcurl (for HTTP\CURLRequest library)
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Installation
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+1. Clone the repository:
+```bash
+git clone [your-repository-url]
+cd [project-directory]
+```
 
-## Installation & updates
+2. Install dependencies using Composer:
+```bash
+composer install
+```
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+3. Environment Setup:
+   - Copy `env` to `.env`
+   - Configure your environment variables in `.env`:
+     - Set your `baseURL`
+     - Configure database settings
+     - Set other environment-specific variables
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+4. Web Server Configuration:
+   - Point your web server to the `public` directory
+   - Ensure the `writable` directory is writable by the web server
+   - Recommended: Set up a virtual host for better security
 
-## Setup
+## Project Structure
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+```
+project/
+├── app/                # Application code
+├── public/            # Public files and index.php
+├── system/            # CodeIgniter core files
+├── tests/             # Test files
+├── writable/          # Writable directory for logs, cache, etc.
+├── .env               # Environment configuration
+└── composer.json      # Project dependencies
+```
 
-## Important Change with index.php
+## Development
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. Start the development server:
+```bash
+php spark serve
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+2. Access your application at `http://localhost:8080`
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Testing
 
-## Repository Management
+Run tests using PHPUnit:
+```bash
+composer test
+```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Security
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- Keep your `.env` file secure and never commit it to version control
+- Ensure proper file permissions on the `writable` directory
+- Follow CodeIgniter's security best practices
 
-## Server Requirements
+## Additional Resources
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+- [CodeIgniter 4 Documentation](https://codeigniter.com/user_guide/)
+- [CodeIgniter 4 Forum](https://forum.codeigniter.com/)
+- [CodeIgniter 4 GitHub Repository](https://github.com/codeigniter4/CodeIgniter4)
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## License
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Support
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+For support, please:
+1. Check the [CodeIgniter 4 Documentation](https://codeigniter.com/user_guide/)
+2. Visit the [CodeIgniter Forums](https://forum.codeigniter.com/)
+3. Join the [CodeIgniter Slack Channel](https://codeigniterchat.slack.com)
